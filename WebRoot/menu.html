@@ -1,0 +1,78 @@
+<#include "/common/select.ftl"/>
+
+<#macro layout>
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="">
+    <meta name="author" content="">
+
+    <!-- Le styles -->
+    <link href="${PATH}/css/bootstrap.css" rel="stylesheet">
+    <link href="${PATH}/css/bootstrap-responsive.css" rel="stylesheet">
+    <link href="${PATH}/css/jquery.validity.css" rel="stylesheet">
+	<style type="text/css">
+      body {
+        padding-top: 60px;
+        padding-bottom: 40px;
+      }
+      .sidebar-nav {
+        padding: 9px 0;
+      }
+    </style>
+    <script src="${PATH}/js/jquery.js"></script>
+    <script src="${PATH}/js/jquery/jQuery.validity.js"></script>
+    <script src="${PATH}/js/bootstrap.js"></script>
+  </head>
+
+  <body data-spy="scroll" data-target=".subnav" data-offset="50">
+ <div class="navbar navbar-fixed-top">
+      <div class="navbar-inner">
+        <div class="container-fluid">
+          <a class="btn btn-navbar" data-toggle="collapse" data-target=".nav-collapse">
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+          </a>
+          <img src="${PATH}/img/logo.png" width="50" height="50"><font size="6" color="#FFFFF0">在线编码后台管理</font>
+          <div class="btn-group pull-right">
+            <a class="btn dropdown-toggle" data-toggle="dropdown" href="#">
+              <i class="icon-user"></i>admin
+              <span class="caret"></span>
+            </a>
+           <ul class="dropdown-menu">
+              <li><a href="#"><i class="icon-cog"></i>修改密码</a></li>
+              <li class="divider"></li>
+              <li><a href="#"><i class="icon-off"></i>退出</a></li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </div>
+
+
+ <div class="container-fluid">
+      <div class="row-fluid">
+        <div class="span2">
+          <div class="well sidebar-nav">
+             <ul class="nav nav-list ">
+			   <li>
+			   <a href="${PATH}/entity" class="dropdown-toggle" data-toggle="dropdown"><i class="icon-person "></i>entity管理</a>
+			   <a href="${PATH}/field" class="dropdown-toggle" data-toggle="dropdown"><i class="icon-person "></i>field管理</a>
+			   <a href="${PATH}/project" class="dropdown-toggle" data-toggle="dropdown"><i class="icon-person "></i>project管理</a>
+			  </li>
+            </ul>
+          </div>
+        </div>
+        
+        <div class="span10">
+         <#nested>
+        </div>
+      </div>
+      <hr>
+    </div><!--/.fluid-container-->
+  </body>
+</html>
+</#macro>

@@ -1,0 +1,88 @@
+
+<#include "/menu.html"/>
+<@layout>
+<div  class="well">
+<a class="btn btn-success" href="${PATH}/field/add"><i class="icon-user icon-white"></i>添加field</a>
+</div>
+<div class="well">
+	<table class="table table-bordered table-striped">
+	<span class="label label-success">field管理</span>
+		<thead>
+			<tr>
+				<th>字段名</th>
+				<th>描述</th>
+				<th>是否显示</th>
+				<th>是否为主键</th>
+				<th>查询类型</th>
+				<th>是否只读</th>
+				<th>是否隐藏</th>
+				<th>默认值</th>
+				<th>校验类型</th>
+				<th>长度</th>
+				<th>精度</th>
+				<th>数据库字段类型</th>
+				<th>java数据类型</th>
+				<th>所属实体</th>
+				<th>操作</th>
+			</tr>
+		</thead>
+		<tbody>
+			<#list page.list as item>
+			<tr>
+				<td>
+					${(item.name)!}
+				</td>
+				<td>
+					${(item.label)!}
+				</td>
+				<td>
+					${(item.display)!}
+				</td>
+				<td>
+					${(item.isPrimaryKey)!}
+				</td>
+				<td>
+					${(item.search)!}
+				</td>
+				<td>
+					${(item.isReaderOnly)!}
+				</td>
+				<td>
+					${(item.isHidder)!}
+				</td>
+				<td>
+					${(item.defaultValue)!}
+				</td>
+				<td>
+					${(item.validator)!}
+				</td>
+				<td>
+					${(item.length)!}
+				</td>
+				<td>
+					${(item.scale)!}
+				</td>
+				<td>
+					${(item.fieldType)!}
+				</td>
+				<td>
+					${(item.javaType)!}
+				</td>
+				<td>
+					${(item.entity_id)!}
+				</td>
+				<td>
+					<div class="btn-group">
+					 	<a class="btn btn-primary" href="${PATH}/field/view/${item.ID}"><i class="icon-trash icon-white"></i>查看</a>
+					 	<a class="btn btn-primary" href="${PATH}/field/edit/${item.ID}"><i class="icon-trash icon-white"></i>修改</a>
+					 	<a class="btn btn-primary" href="${PATH}/field/delete/${item.ID}"><i class="icon-trash icon-white"></i>删除</a>
+					</div>
+				</td>
+			</tr>
+			</#list>
+		</tbody>
+	</table>
+	<#include "/common/paginate.ftl" />
+	<@paginate currentPage=page.pageNumber totalPage=page.totalPage actionUrl="${PATH}/field/"/>
+</div>
+</@layout>

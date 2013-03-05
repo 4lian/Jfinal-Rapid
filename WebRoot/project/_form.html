@@ -1,0 +1,165 @@
+
+		<input type="hidden" name="project.id" id="id" value="${(project.id)!}">
+	<div class="control-group">
+		<label class="control-label" for="focusedInput">项目名:</label>
+		<div class="controls" >
+		<input class="input-xlarge focused" type="text" name="project.name" id="project.name" value="${(project.name)!}" style="height: 26" />
+		</div>
+	</div>
+	<div class="control-group">
+		<label class="control-label" for="focusedInput">项目描述:</label>
+		<div class="controls" >
+		<input class="input-xlarge focused" type="text" name="project.desc" id="project.desc" value="${(project.desc)!}" style="height: 26" />
+		</div>
+	</div>
+	<div class="control-group">
+		<label class="control-label" for="focusedInput">工作空间路径:</label>
+		<div class="controls" >
+		<input class="input-xlarge focused" type="text" name="project.workspace" id="project.workspace" value="${(project.workspace)!}" style="height: 26" />
+		</div>
+	</div>
+	<div class="control-group">
+		<label class="control-label" for="focusedInput">视图风格:</label>
+ 		<div class="controls" >
+            <select id="project.viewFramework" name="project.viewFramework">
+		    <#list frameworks as item>
+            <option value="${item}" >
+            ${item}
+            </option>
+            </#list>      
+            </select>
+    	</div>
+	</div>
+	<div class="control-group">
+		<label class="control-label" for="focusedInput">数据链接池:</label>
+		 <div class="controls" >
+            <select id="project.dbPool" name="project.dbPool">
+		    <#list dbPools as item>
+            <option value="${item}" >
+            ${item}
+            </option>
+            </#list>      
+            </select>
+    	</div>
+	</div>
+	<div class="control-group">
+		<label class="control-label" for="focusedInput">IP:</label>
+		<div class="controls" >
+		<input class="input-xlarge focused" type="text" name="project.ip" id="project.ip" value="${(project.ip)!}" style="height: 26" />
+		</div>
+	</div>
+	<div class="control-group">
+		<label class="control-label" for="focusedInput">端口:</label>
+		<div class="controls" >
+		<input class="input-xlarge focused" type="text" name="project.port" id="project.port" value="${(project.port)!}" style="height: 26" />
+		</div>
+	</div>
+	<div class="control-group">
+		<label class="control-label" for="focusedInput">模版文件路径:</label>
+		<div class="controls" >
+		<input class="input-xlarge focused" type="text" name="project.templates" id="project.templates" value="${(project.templates)!}" style="height: 26" />
+		</div>
+	</div>
+	<div class="control-group">
+		<label class="control-label" for="focusedInput">webRoot根路径:</label>
+		<div class="controls" >
+		<input class="input-xlarge focused" type="text" name="project.webRoot" id="project.webRoot" value="${(project.webRoot)!}" style="height: 26" />
+		</div>
+	</div>
+	<div class="control-group">
+		<label class="control-label" for="focusedInput">src原代码路径:</label>
+		<div class="controls" >
+		<input class="input-xlarge focused" type="text" name="project.src" id="project.src" value="${(project.src)!}" style="height: 26" />
+		</div>
+	</div>
+	<div class="control-group">
+		<label class="control-label" for="focusedInput">配置文件路径:</label>
+		<div class="controls" >
+		<input class="input-xlarge focused" type="text" name="project.config" id="project.config" value="${(project.config)!}" style="height: 26" />
+		</div>
+	</div>
+	<div class="control-group">
+		<label class="control-label" for="focusedInput">数据库类型:</label>
+		 <div class="controls" >
+            <select id="project.dbType" name="project.dbType">
+		    <#list dbTypes as item>
+            <option value="${item}" >
+            ${item}
+            </option>
+            </#list>      
+            </select>
+    	</div>		
+	</div>
+	<div class="control-group">
+		<label class="control-label" for="focusedInput">DBurl:</label>
+		<div class="controls" >
+		<input class="input-xlarge focused" type="text" name="project.jdbcurl" id="project.jdbcurl" value="${(project.jdbcurl)!}" style="height: 26" />
+		</div>
+	</div>
+	<div class="control-group">
+		<label class="control-label" for="focusedInput">DBuser:</label>
+		<div class="controls" >
+		<input class="input-xlarge focused" type="text" name="project.username" id="project.username" value="${(project.username)!}" style="height: 26" />
+		</div>
+	</div>
+	<div class="control-group">
+		<label class="control-label" for="focusedInput">DBpwd:</label>
+		<div class="controls" >
+		<input class="input-xlarge focused" type="text" name="project.password" id="project.password" value="${(project.password)!}" style="height: 26" />
+		</div>
+	</div>
+	<div class="control-group">
+		<label class="control-label" for="focusedInput">包名:</label>
+		<div class="controls" >
+		<input class="input-xlarge focused" type="text" name="project.packageName" id="project.packageName" value="${(project.packageName)!}" style="height: 26" />
+		</div>
+	</div>
+	<div class="control-group">
+		<label class="control-label" for="focusedInput">模版引擎类型:</label>
+ 		<div class="controls" >
+            <select id="project.viewType" name="project.viewType">
+		    <#list viewTypes as item>
+            <option value="${item}" >
+            ${item}
+            </option>
+            </#list>      
+            </select>
+    	</div>
+	</div>
+	<div class="control-group">
+		<label class="control-label" for="focusedInput">编译级别:</label>
+ 		<div class="controls" >
+            <select id="project.compileLeve" name="project.compileLeve">
+		    <#list compileLevels as item>
+            <option value="${item}" >
+            ${item}
+            </option>
+            </#list>      
+            </select>
+    	</div>		
+	</div>
+	<div class="control-group">
+		<label class="control-label" for="focusedInput">是否内嵌生成器:</label>
+ 		<div class="controls" >
+            <select id="project.embedded" name="project.embedded">
+            <option value="1" >是</option>
+            <option value="0" >否</option>
+            </select>
+    	</div>			
+	</div>
+	<div class="control-group">
+		<label class="control-label" for="focusedInput">构建方式:</label>
+ 		<div class="controls" >
+            <select id="project.build" name="project.build">
+		    <#list builds as item>
+            <option value="${item}" >
+            ${item}
+            </option>
+            </#list>      
+            </select>
+    	</div>		
+	</div>
+	<div class="form-actions">
+        <button type="submit" class="btn btn-primary" onsubmit="add()">确 定</button>
+        <button type="reset" class="btn">重 置</button>
+    </div>

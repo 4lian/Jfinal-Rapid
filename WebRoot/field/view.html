@@ -1,0 +1,48 @@
+
+<#include "/menu.html"/>
+<@layout>
+<div class="well">
+	<table class="table table-bordered table-striped">
+	<span class="label label-success">查看field</span>
+		<thead>
+			<tr>
+				<th>id</th>
+				<th>字段名</th>
+				<th>描述</th>
+				<th>是否显示</th>
+				<th>是否为主键</th>
+				<th>查询类型</th>
+				<th>是否只读</th>
+				<th>是否隐藏</th>
+				<th>默认值</th>
+				<th>校验类型</th>
+				<th>长度</th>
+				<th>精度</th>
+				<th>数据库字段类型</th>
+				<th>java数据类型</th>
+				<th>所属实体</th>
+			</tr>
+		</thead>
+		<tbody>
+			<tr>
+				<th>${(field.id)!}</th>
+				<th>${(field.name)!}</th>
+				<th>${(field.label)!}</th>
+				<th>${(field.display)!}</th>
+				<th>${(field.isPrimaryKey)!}</th>
+				<th>${(field.search)!}</th>
+				<th>${(field.isReaderOnly)!}</th>
+				<th>${(field.isHidder)!}</th>
+				<th>${(field.defaultValue)!}</th>
+				<th>${(field.validator)!}</th>
+				<th>${(field.length)!}</th>
+				<th>${(field.scale)!}</th>
+				<th>${(field.fieldType)!}</th>
+				<th>${(field.javaType)!}</th>
+				<th>${(field.entity_id)!}</th>
+			</tr>
+			</tr>
+		</tbody>
+	</table>
+</div>
+</@layout>

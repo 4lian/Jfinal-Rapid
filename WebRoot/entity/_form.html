@@ -1,0 +1,30 @@
+
+	<input type="hidden" name="entity.id" id="id" value="${(entity.id)!}">
+	<div class="control-group">
+		<label class="control-label" for="focusedInput">表名:</label>
+		<div class="controls" >
+		<input class="input-xlarge focused" type="text" name="entity.name" id="entity.name" value="${(entity.name)!}" style="height: 26" />
+		</div>
+	</div>
+	<div class="control-group">
+		<label class="control-label" for="focusedInput">描述:</label>
+		<div class="controls" >
+		<input class="input-xlarge focused" type="text" name="entity.label" id="entity.label" value="${(entity.label)!}" style="height: 26" />
+		</div>
+	</div>
+	<div class="control-group">
+        <label class="control-label" for="focusedInput">所属项目：</label>
+         <div class="controls" >
+        <select id="entity.project_id" name="entity.project_id">
+		<#list projects as project>
+        <option value="${project.id}"  >
+        ${project.desc}/${project.name}
+        </option>
+        </#list>      
+        </select>
+    </div>
+    </div>
+	<div class="form-actions">
+        <button type="submit" class="btn btn-primary" onsubmit="add()">确 定</button>
+        <button type="reset" class="btn">重 置</button>
+    </div>

@@ -1,0 +1,159 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<tasks>
+	<task name="classpath">
+		<filename>".classpath"</filename>
+		<templatepath>"config/classpath.ftl"</templatepath>
+		<outtype>OUT_TYPE_CONFIG</outtype>
+		<floder>project.getWorkspace() + "/" + project.getName() + "/"</floder>
+		<type>single</type>
+		<params>
+			<param name="_libs">TaskKit.createLib(project)</param>
+		</params>
+	</task>
+	<task name="model">
+		<filename>TaskKit.toCapitalize(entity.getName().toLowerCase()) +".java"</filename>
+		<templatepath>"java/model.ftl"</templatepath>
+		<outtype>OUT_TYPE_SRC</outtype>
+		<floder>TaskKit.getDestdir(project,outtype) + "/"+project.getPackageName().replaceAll("\\.", "/") + "/"
+			+entity.getName().toLowerCase() +"/"
+		</floder>
+		<type>multi</type>
+		<params>
+			<param name="_hasGetterAndSetter">"false"</param>
+		</params>
+	</task>
+	<task name="build">
+		<filename>"build.xml"</filename>
+		<templatepath>"config/build.ftl"</templatepath>
+		<outtype>OUT_TYPE_ROOT</outtype>
+		<floder>TaskKit.getDestdir(project,outtype) + "/"</floder>
+		<type>single</type>
+	</task>
+	<task name="ddl">
+		<filename>project.getName() + ".sql"</filename>
+		<templatepath>"db/" + project.getDbType() + "/ddl.ftl"</templatepath>
+		<outtype>OUT_TYPE_ROOT</outtype>
+		<floder>TaskKit.getDestdir(project,outtype)+"/"</floder>
+		<type>single</type>
+	</task>
+	<task name="log4j">
+		<filename>"log4j.properties"</filename>
+		<templatepath>"config/log4j.ftl"</templatepath>
+		<outtype>OUT_TYPE_CONFIG</outtype>
+		<floder>TaskKit.getDestdir(project,outtype) + "/"</floder>
+		<type>single</type>
+		<params>
+			<param name="_conversionPattern">"[%-5p] %d{yyyy-MM-dd HH:mm:ss} method:%l%n%m%n"</param>
+		</params>
+	</task>
+	<task name="appconfig">
+		<filename>TaskKit.toCapitalize(project.getName()) + "Config.java"</filename>
+		<templatepath>"java/config.ftl"</templatepath>
+		<outtype>OUT_TYPE_SRC</outtype>
+		<floder>TaskKit.getDestdir(project,outtype) + "/" + project.getPackageName().replaceAll("\\.", "/") + "/"</floder>
+		<type>single</type>
+		<params>
+			<param name="_viewType">Constant.ViewType.get(project.getViewType())</param>
+			<param name="_driver">Constant.Driver.get(project.getDbType())</param>
+		</params>
+	</task>
+	<task name="config">
+		<filename>"config.txt"</filename>
+		<templatepath>"config/txt.ftl"</templatepath>
+		<outtype>OUT_TYPE_CONFIG</outtype>
+		<floder>TaskKit.getDestdir(project,outtype) + "/"</floder>
+		<type>single</type>
+		<params>
+			<param name="_driver">Constant.Driver.get(project.getDbType())</param>
+		</params>
+	</task>
+	<task name="webxml">
+		<filename>"web.xml"</filename>
+		<templatepath>"config/web.ftl"</templatepath>
+		<outtype>OUT_TYPE_WEB</outtype>
+		<floder>TaskKit.getDestdir(project,outtype) + "/" + "WEB-INF" + "/"</floder>
+		<type>single</type>
+	</task>
+	<task name="indexController">
+		<filename>"IndexController.java"</filename>
+		<templatepath>"java/index.ftl"</templatepath>
+		<outtype>OUT_TYPE_SRC</outtype>
+		<floder>TaskKit.getDestdir(project,outtype) + "/" +project.getPackageName().replaceAll("\\.", "/") + "/"
+		</floder>
+		<type>single</type>
+	</task>
+	<task name="validate">
+		<filename>TaskKit.toCapitalize(entity.getName().toLowerCase()) + "Validator.java"</filename>
+		<templatepath>"java/validator.ftl"</templatepath>
+		<outtype>OUT_TYPE_SRC</outtype>
+		<floder>TaskKit.getDestdir(project,outtype) + "/" +project.getPackageName().replaceAll("\\.", "/") + "/"+entity.getName().toLowerCase() + "/"
+		</floder>
+		<type>multi</type>
+	</task>
+	<task name="controller">
+		<filename>TaskKit.toCapitalize(entity.getName().toLowerCase()) + "Controller.java"</filename>
+		<templatepath>"java/controller.ftl"</templatepath>
+		<outtype>OUT_TYPE_SRC</outtype>
+		<floder>TaskKit.getDestdir(project,outtype) + "/" +project.getPackageName().replaceAll("\\.", "/") + "/"
+			+entity.getName().toLowerCase() + "/"
+		</floder>
+		<type>multi</type>
+	</task>
+	<task name="add">
+		<filename>"add.html"</filename>
+		<templatepath>"view/" + project.getViewFramework()
+			+"/"+project.getViewType()+ "/add.ftl"</templatepath>
+		<outtype>OUT_TYPE_WEB</outtype>
+		<floder>TaskKit.getDestdir(project,outtype) + "/" + entity.getName().toLowerCase() + "/"</floder>
+		<type>multi</type>
+	</task>
+	<task name="edit">
+		<filename>"edit.html"</filename>
+		<templatepath>"view/" + project.getViewFramework() + "/" + project.getViewType() + "/edit.ftl"</templatepath>
+		<outtype>OUT_TYPE_WEB</outtype>
+		<floder>TaskKit.getDestdir(project,outtype) + "/" + entity.getName().toLowerCase() + "/"</floder>
+		<type>multi</type>
+	</task>
+	<task name="form">
+		<filename>"_form.html"</filename>
+		<templatepath>"view/" + project.getViewFramework()  +"/"+project.getViewType()+ "/_form.ftl"</templatepath>
+		<outtype>OUT_TYPE_WEB</outtype>
+		<floder>TaskKit.getDestdir(project,outtype) + "/" + entity.getName().toLowerCase() + "/"</floder>
+		<type>multi</type>
+	</task>
+	<task name="login">
+		<filename>"login.html"</filename>
+		<templatepath>"view/" + project.getViewFramework() + "/" + project.getViewType() + "/index.ftl"</templatepath>
+		<outtype>OUT_TYPE_WEB</outtype>
+		<floder>TaskKit.getDestdir(project,outtype) + "/"</floder>
+		<type>single</type>
+	</task>
+	<task name="index">
+		<filename>"index.html"</filename>
+		<templatepath>"view/" + project.getViewFramework() + "/" + project.getViewType() + "/index.ftl"</templatepath>
+		<outtype>OUT_TYPE_WEB</outtype>
+		<floder>TaskKit.getDestdir(project,outtype) + "/"</floder>
+		<type>single</type>
+	</task>
+	<task name="menu">
+		<filename>"menu.html"</filename>
+		<templatepath>"view/" + project.getViewFramework()  +"/"+project.getViewType()+ "/menu.ftl"</templatepath>
+		<outtype>OUT_TYPE_WEB</outtype>
+		<floder>TaskKit.getDestdir(project,outtype) + "/"</floder>
+		<type>single</type>
+	</task>
+	<task name="page">
+		<filename>"index.html"</filename>
+		<templatepath>"view/" + project.getViewFramework() + "/" + project.getViewType() + "/page.ftl"</templatepath>
+		<outtype>OUT_TYPE_WEB</outtype>
+		<floder>TaskKit.getDestdir(project,outtype) + "/" + entity.getName().toLowerCase() + "/"</floder>
+		<type>multi</type>
+	</task>
+	<task name="view">
+		<filename>"view.html"</filename>
+		<templatepath>"view/" + project.getViewFramework() + "/" + project.getViewType() + "/view.ftl"</templatepath>
+		<outtype>OUT_TYPE_WEB</outtype>
+		<floder>TaskKit.getDestdir(project,outtype) + "/" + entity.getName().toLowerCase() + "/"</floder>
+		<type>multi</type>
+	</task>
+</tasks>

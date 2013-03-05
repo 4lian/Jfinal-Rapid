@@ -1,0 +1,30 @@
+
+<#include "/menu.html"/>
+<@layout>
+<div class="well">
+	<span class="label label-success">添加field</span>
+	<form id="from1" class="well form-horizontal" action="${PATH}/field/save" method="post">
+		<#include "_form.html" />
+	</form>
+</div>
+ <script>
+	$(function() { 
+     $("#form1").validity(function() {
+        $("name").requrie();
+        $("label").requrie();
+        $("display").requrie();
+        $("isPrimaryKey").requrie();
+        $("search").requrie();
+        $("isReaderOnly").requrie();
+        $("isHidder").requrie();
+        $("defaultValue").requrie();
+        $("validator").requrie();
+        $("length").requrie();
+        $("scale").requrie();
+        $("fieldType").requrie();
+        $("javaType").requrie();
+        $("entity_id").requrie();
+     });
+ }); 
+</script>
+</@layout>

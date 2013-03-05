@@ -1,0 +1,20 @@
+
+<#include "/menu.html"/>
+<@layout>
+<div class="well">
+	<span class="label label-success">添加entity</span>
+	<form id="from1" class="well form-horizontal" action="${PATH}/entity/save" method="post">
+		<#include "_form.html" />
+	</form>
+</div>
+ <script>
+	$(function() { 
+     $("#form1").validity(function() {
+        $("name").requrie();
+        $("type").requrie();
+        $("label").requrie();
+        $("service_id").requrie();
+     });
+ }); 
+</script>
+</@layout>

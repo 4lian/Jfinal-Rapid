@@ -1,0 +1,94 @@
+
+		<input type="hidden" name="field.id" id="id" value="${(field.id)!}">
+	<div class="control-group">
+		<label class="control-label" for="focusedInput">字段名:</label>
+		<div class="controls" >
+		<input class="input-xlarge focused" type="text" name="field.name" id="field.name" value="${(field.name)!}" style="height: 26" />
+		</div>
+	</div>
+	<div class="control-group">
+		<label class="control-label" for="focusedInput">描述:</label>
+		<div class="controls" >
+		<input class="input-xlarge focused" type="text" name="field.label" id="field.label" value="${(field.label)!}" style="height: 26" />
+		</div>
+	</div>
+	<div class="control-group">
+		<label class="control-label" for="focusedInput">是否显示:</label>
+		<div class="controls" >
+		<input class="input-xlarge focused" type="text" name="field.display" id="field.display" value="${(field.display)!}" style="height: 26" />
+		</div>
+	</div>
+	<div class="control-group">
+		<label class="control-label" for="focusedInput">是否为主键:</label>
+		<div class="controls" >
+		<input class="input-xlarge focused" type="text" name="field.isPrimaryKey" id="field.isPrimaryKey" value="${(field.isPrimaryKey)!}" style="height: 26" />
+		</div>
+	</div>
+	<div class="control-group">
+		<label class="control-label" for="focusedInput">查询类型:</label>
+		<div class="controls" >
+		<input class="input-xlarge focused" type="text" name="field.search" id="field.search" value="${(field.search)!}" style="height: 26" />
+		</div>
+	</div>
+	<div class="control-group">
+		<label class="control-label" for="focusedInput">是否只读:</label>
+		<div class="controls" >
+		<input class="input-xlarge focused" type="text" name="field.isReaderOnly" id="field.isReaderOnly" value="${(field.isReaderOnly)!}" style="height: 26" />
+		</div>
+	</div>
+	<div class="control-group">
+		<label class="control-label" for="focusedInput">是否隐藏:</label>
+		<div class="controls" >
+		<input class="input-xlarge focused" type="text" name="field.isHidder" id="field.isHidder" value="${(field.isHidder)!}" style="height: 26" />
+		</div>
+	</div>
+	<div class="control-group">
+		<label class="control-label" for="focusedInput">默认值:</label>
+		<div class="controls" >
+		<input class="input-xlarge focused" type="text" name="field.defaultValue" id="field.defaultValue" value="${(field.defaultValue)!}" style="height: 26" />
+		</div>
+	</div>
+	<div class="control-group">
+		<label class="control-label" for="focusedInput">校验类型:</label>
+		<div class="controls" >
+		<input class="input-xlarge focused" type="text" name="field.validator" id="field.validator" value="${(field.validator)!}" style="height: 26" />
+		</div>
+	</div>
+	<div class="control-group">
+		<label class="control-label" for="focusedInput">长度:</label>
+		<div class="controls" >
+		<input class="input-xlarge focused" type="text" name="field.length" id="field.length" value="${(field.length)!}" style="height: 26" />
+		</div>
+	</div>
+	<div class="control-group">
+		<label class="control-label" for="focusedInput">精度:</label>
+		<div class="controls" >
+		<input class="input-xlarge focused" type="text" name="field.scale" id="field.scale" value="${(field.scale)!}" style="height: 26" />
+		</div>
+	</div>
+	<div class="control-group">
+		<label class="control-label" for="focusedInput">数据库字段类型:</label>
+		<div class="controls" >
+		<input class="input-xlarge focused" type="text" name="field.fieldType" id="field.fieldType" value="${(field.fieldType)!}" style="height: 26" />
+		</div>
+	</div>
+	<div class="control-group">
+		<label class="control-label" for="focusedInput">java数据类型:</label>
+		<div class="controls" >
+		<input class="input-xlarge focused" type="text" name="field.javaType" id="field.javaType" value="${(field.javaType)!}" style="height: 26" />
+		</div>
+	</div>
+	<div class="control-group">
+        <label class="control-label" for="focusedInput">所属实体：</label>
+        <div class="controls" >
+        	<select id="field.entity_id" name="field.entity_id">
+		    <#list entities as entity>
+                <option value="${entity.id}" selected>${entity.label}/${entity.name}</option>
+            </#list>      
+             </select>
+        </div>
+    </div>
+	<div class="form-actions">
+        <button type="submit" class="btn btn-primary" onsubmit="add()">确 定</button>
+        <button type="reset" class="btn">重 置</button>
+    </div>

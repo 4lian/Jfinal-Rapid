@@ -1,0 +1,67 @@
+
+<#include "/menu.html"/>
+<@layout>
+<div  class="well">
+<a class="btn btn-success" href="${PATH}/project/add"><i class="icon-user icon-white"></i>添加project</a>
+</div>
+<div class="well">
+	<table class="table table-bordered table-striped">
+	<span class="label label-success">project管理</span>
+		<thead>
+			<tr>
+				<th>项目名</th>
+				<th>项目描述</th>
+				<th>工作空间路径</th>
+				<th>视图风格</th>
+				<th>模版引擎</th>
+				<th>数据链接池</th>
+				<th>IP</th>
+				<th>端口</th>
+				<th>操作</th>
+			</tr>
+		</thead>
+		<tbody>
+			<#list page.list as item>
+			<tr>
+				<td>
+					${(item.name)!}
+				</td>
+				<td>
+					${(item.desc)!}
+				</td>
+				<td>
+					${(item.workspace)!}
+				</td>
+				<td>
+					${(item.viewFramework)!}
+				</td>
+				<td>
+					${(item.viewType)!}
+				</td>
+				<td>
+					${(item.dbPool)!}
+				</td>
+				<td>
+					${(item.ip)!}
+				</td>
+				<td>
+					${(item.port)!}
+				</td>
+				<td>
+					<div class="btn-group">
+					<a class="btn btn-primary" href="${PATH}/project/createProject/${item.ID}"><i class="icon-trash icon-white"></i>生成</a>
+					<a class="btn btn-primary" href="${PATH}/project/startProject/${item.ID}"><i class="icon-trash icon-white"></i>启动</a>
+					<a class="btn btn-primary" href="${PATH}/project/stopProject/${item.ID}"><i class="icon-trash icon-white"></i>停止</a>
+					 	<a class="btn btn-primary" href="${PATH}/project/view/${item.ID}"><i class="icon-trash icon-white"></i>查看</a>
+					 	<a class="btn btn-primary" href="${PATH}/project/edit/${item.ID}"><i class="icon-trash icon-white"></i>修改</a>
+					 	<a class="btn btn-primary" href="${PATH}/project/delete/${item.ID}"><i class="icon-trash icon-white"></i>删除</a>
+					</div>
+				</td>
+			</tr>
+			</#list>
+		</tbody>
+	</table>
+	<#include "/common/paginate.ftl" />
+	<@paginate currentPage=page.pageNumber totalPage=page.totalPage actionUrl="${PATH}/project/"/>
+</div>
+</@layout>
